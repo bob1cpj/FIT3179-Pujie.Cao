@@ -1,0 +1,51 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 950,
+    "height": 750,
+    "title": "Average Rainfall",
+    "projection": {
+      "type": "mercator"
+    },
+    "data": {
+      "url": "https://raw.githubusercontent.com/bob1cpj/FIT3179-Pujie.Cao/refs/heads/main/gadm41_AUS.json",
+      "format": {"type": "topojson", "feature": "gadm41_AUS_2"}
+    },
+    "transform": [
+      {
+        "lookup": "properties.NAME_2",
+        "from": {
+          "data": {
+            "url": "https://raw.githubusercontent.com/bob1cpj/FIT3179-Pujie.Cao/refs/heads/main/Average_Rainfall_Per_Location.csv"
+          },
+          "key": "Location",
+          "fields": ["Rainfall"]
+        },
+        "default": null  
+      }
+    ],
+    "layer": [
+      {
+        "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.5},
+        "encoding": {
+          "color": {
+            "value": "lightblue"   
+          }
+        }
+      },
+      {
+        "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.5},
+        "encoding": {
+          "color": {
+            "field": "Rainfall",
+            "type": "quantitative",
+            "scale": {"scheme": "blues"}  
+          },
+          "tooltip": [
+            {"field": "properties.NAME_2", "type": "nominal", "title": "Location"},
+            {"field": "Rainfall", "type": "quantitative", "title": "Average Rainfall"}
+          ]
+        }
+      }
+    ]
+  }
+  
