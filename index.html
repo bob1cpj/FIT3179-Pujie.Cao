@@ -1,25 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
-<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-<script src="vega_lite_vis.js"></script>
-<title>Visualisation2 </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Analysis in Australia</title>
+    <style>
+        body {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Light blue background */
+            color: #333;
+        }
+        header {
+            background-image: url('banner-image.jpg'); /* Add a relevant weather or Australian landscape image */
+            background-size: cover;
+            background-position: center;
+            padding: 60px 20px;
+            text-align: center;
+            color: #090909;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+        header p {
+            font-size: 1.2em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+            background-color: #333;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+        }
+        nav ul li a:hover {
+            background-color: #444;
+            border-radius: 4px;
+        }
+        section {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        section h2 {
+            color: #007acc; /* Blue color for section titles */
+        }
+        section p {
+            margin-top: 5px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin-top: 40px;
+            border-radius: 8px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <script src="vega_lite_vis.js"></script>
 </head>
-<body1>
-<h1>Average Rainfall Map in AUS</h1>
-<div1 id="vg1"></div1>
-</body1>
-<body2>
-<h2>Max Temperature Over Selected Location</h2>
-<div2 id="vg2"></div2>
-</body2>
-<body3>
-<h3>Rainfall Over Selected Location</h3>
-<div3 id="vg3"></div3>
-</body3>
+<body>
+    <header>
+        <h1>Weather Trends in Australia</h1>
+        <p>Explore temperature and rainfall trends across Australian cities through interactive visualizations, revealing patterns and insights.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#vg1">Average Rainfall Map</a></li>
+            <li><a href="#vg2">Max Temperature Trends</a></li>
+            <li><a href="#vg3">Rainfall Analysis</a></li>
+        </ul>
+    </nav>
+
+    <section id="vg1">
+        <h2>Average Rainfall Map in Australia</h2>
+        <p>This map visualizes the average rainfall distribution across various regions in Australia, helping to identify areas with high or low precipitation.</p>
+        <div id="vg1"></div>
+    </section>
+
+    <section id="vg2">
+        <h2>Max Temperature Over Selected Locations</h2>
+        <p>This chart tracks changes in maximum temperature across selected Australian cities over time, providing insights into seasonal variations and temperature spikes.</p>
+        <div id="vg2"></div>
+    </section>
+
+    <section id="vg3">
+        <h2>Rainfall Over Selected Locations</h2>
+        <p>Observe rainfall patterns in different cities and analyze trends over time, including periods of drought and heavy rainfall events.</p>
+        <div id="vg3"></div>
+    </section>
+</body>
 </html>
