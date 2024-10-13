@@ -17,21 +17,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;900&display=swap" rel="stylesheet">
 
-  <!-- CSS file -->
-  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
-  
+  <!-- CSS styling -->
   <style>
     /* Basic styling improvements */
     body {
       font-family: 'Open Sans', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
+      background: linear-gradient(to bottom, #f9f9f9, #e0e0e0);
+      color: #333;
     }
 
     h1, h2 {
       text-align: center;
       color: #2c3e50;
+      margin-bottom: 20px;
     }
 
     h1 {
@@ -40,10 +40,10 @@
     }
 
     h2 {
-      margin: 20px 0;
       font-size: 1.8em;
       border-bottom: 2px solid #2980b9;
       display: inline-block;
+      padding-bottom: 10px;
     }
 
     .page {
@@ -58,6 +58,8 @@
       margin-bottom: 20px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      height: 200px; /* Ensure all description boxes are the same height */
+      box-sizing: border-box;
     }
 
     p {
@@ -70,6 +72,15 @@
       padding: 20px;
     }
 
+    .pure-u-1-2 {
+      padding: 10px;
+      width: 100%;
+    }
+
+    .pure-u-1-1 {
+      padding: 10px;
+    }
+
     /* Responsive adjustments */
     @media (max-width: 768px) {
       .pure-u-1-2 {
@@ -78,10 +89,11 @@
 
       .description-left {
         text-align: center;
+        height: auto;
       }
     }
-
   </style>
+
 </head>
 
 <body>
@@ -96,7 +108,7 @@
     <!-- AVERAGE RAINFALL MAP -->
     <div class="pure-g">
       <div class="pure-u-1-1">
-        <h2><u>Average Rainfall Map</u></h2>
+        <h2>Average Rainfall Map</h2>
       </div>
     </div>
 
@@ -107,8 +119,15 @@
       </div>
       <div class="pure-u-1-2">
         <div class="description description-left">
-          <p> This map visualizes the average rainfall distribution across various regions in Australia. Using the Mercator projection, it shows the areas with different levels of rainfall, where the colors represent the intensity of rainfall. The map is color-coded in shades of blue, with darker blue indicating higher average rainfall and lighter blue showing areas with lower rainfall.</p>
-          <p> The visualization highlights regional disparities in rainfall across Australia, helping to distinguish wetter areas (like coastal regions) from drier, inland areas.</p>
+          <p> This map visualizes the average rainfall distribution across various regions in Australia. 
+            Using the Mercator projection, it shows the areas with different levels of rainfall, where the 
+            colors represent the intensity of rainfall. The map is color-coded in shades of blue, with darker 
+            blue indicating higher average rainfall and lighter blue showing areas with lower rainfall. 
+            Tooltips provide additional details, such as the specific location and its corresponding average 
+            rainfall values.The visualization effectively highlights regional disparities in rainfall across Australia, 
+            helping to distinguish wetter areas (like coastal regions) from drier, inland areas. For instance, northern 
+            and eastern regions tend to experience higher rainfall, while central and western inland areas are generally 
+            much drier.</p>
         </div>
       </div>
     </div>
@@ -116,14 +135,22 @@
     <!-- MAX TEMPERATURE -->
     <div class="pure-g">
       <div class="pure-u-1-1">
-        <h2><u>Max Temperature Over Time</u></h2>
+        <h2>Max Temperature Over Time</h2>
       </div>
     </div>
 
     <div class="pure-g">
       <div class="pure-u-1-2">
         <div class="description description-left">
-          <p>This chart visualizes maximum temperature trends over time across selected Australian cities such as Albury, Sydney, Melbourne, Brisbane, and Perth. Users can observe the pattern of temperature spikes during summer and cooler temperatures in winter.</p>
+          <p>This chart visualizes maximum temperature trends over time across selected 
+            Australian cities such as Albury, Sydney, Melbourne, Brisbane, and Perth. 
+            It uses a scatter plot where each data point represents a maximum temperature 
+            value for a specific date, color-coded by location. A drop-down menu allows users 
+            to filter the data by city. The graph provides insights into the seasonal fluctuations 
+            and temperature extremes across Australian cities. Users can observe the pattern of 
+            temperature spikes during summer and cooler temperatures in winter. The visualization 
+            highlights the diversity of climates across regions, helping in climate trend analysis 
+            and urban planning.</p>
         </div>
       </div>
       <div class="pure-u-1-2">
@@ -134,7 +161,7 @@
     <!-- RAINFALL OVER TIME -->
     <div class="pure-g">
       <div class="pure-u-1-1">
-        <h2><u>Rainfall Over Time</u></h2>
+        <h2>Rainfall Over Time</h2>
       </div>
     </div>
 
@@ -144,7 +171,16 @@
       </div>
       <div class="pure-u-1-1">
         <div class="description description-left">
-          <p> This graph shows the rainfall trends over time for selected Australian cities. The y-axis is constrained to a maximum of 200mm for readability. The visualization highlights the fluctuations in rainfall across different Australian regions, helping to understand seasonal and regional variations in precipitation, which is essential for water management, agriculture, and climate studies.</p>
+          <p> This graph shows the rainfall trends over time for selected Australian cities 
+            such as Albury, Sydney, Melbourne, Brisbane, and Perth. It uses a scatter plot 
+            with data points representing daily rainfall (in mm) over time, with a filtering 
+            option that allows users to select a specific city to focus on. The y-axis is constrained 
+            to a maximum of 200mm for readability, and the chart includes an annotation marking 
+            the start of 2015. The visualization highlights the fluctuations in rainfall across different 
+            Australian regions, with some cities like Brisbane experiencing frequent high-rainfall days, 
+            while others, like Melbourne, have more moderate and sporadic rainfall patterns. This helps 
+            in understanding seasonal and regional variations in precipitation, which is essential for water 
+            management, agriculture, and climate studies.</p>
         </div>
       </div>
     </div>
